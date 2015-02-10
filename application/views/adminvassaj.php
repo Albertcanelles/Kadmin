@@ -7,13 +7,13 @@
 <body>
     <div>
         <!--BEGIN THEME SETTING-->
+        
         <!--END THEME SETTING-->
         <!--BEGIN BACK TO TOP-->
         <a id="totop" href="#"><i class="fa fa-angle-up"></i></a>
         <!--END BACK TO TOP-->
         <!--BEGIN TOPBAR-->
         <?php include 'header.php' ?>
-        </nav>
             <!--BEGIN MODAL CONFIG PORTLET-->
             <div id="modal-config" class="modal fade">
                 <div class="modal-dialog">
@@ -50,7 +50,7 @@
         <!--END TOPBAR-->
         <div id="wrapper">
             <!--BEGIN SIDEBAR MENU-->
-           <?php include 'menusuaris.php' ?>
+           <?php include 'menu.php' ?>
           
             <div id="page-wrapper">
                 <!--BEGIN TITLE & BREADCRUMB PAGE-->
@@ -123,18 +123,18 @@
                                         <div data-control-type="pagination" data-control-name="paging" data-control-action="paging" class="jplist-pagination"></div>
                                     </div>
                                     <div class="box text-shadow">
-                                      <table class="demo-tbl"><!--<item>1</item>-->
-                                           <?php foreach($this->_ci_cached_vars as $index => $llistarpartitura){ ?>
+                                        <table class="demo-tbl"><!--<item>1</item>-->
+                                           <?php foreach($this->_ci_cached_vars as $index => $llistarassajos){ ?>
                                             <tr class="tbl-item"><!--<img/>-->
                                           
                                                 <!--<data></data>-->
-                                                <td class="td-block">
+                                                <td class="td-block"><p class="date"><?php echo $llistarassajos['DiaHora']; ?></p>
 
-                                                    <p class="title"><?php echo $llistarpartitura['Nom']; ?></p>
+                                                    <p class="title"><?php echo $llistarassajos['Assajs']; ?></p>
 
-                                                    <p class="desc"><?php echo $llistarpartitura['Partitura']; ?></p>
+                                                    <p class="desc"><?php echo $llistarassajos['Lloc']; ?></p>
 
-                                                    
+                                                    <p class="like"><?php echo $llistarassajos['ProxActuacio']; ?></p></td>
                                             </tr>
                                             <?php } ?>
                                         </table>
@@ -180,12 +180,13 @@
                 </div>
                 <!--END CONTENT-->
                 <!--BEGIN FOOTER-->
-                <?php include 'footer.php' ?>
+               <?php include 'footer.php' ?>
                 <!--END FOOTER-->
             </div>
             <!--END PAGE WRAPPER-->
         </div>
     </div>
+   
     <script>        (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
             i[r] = i[r] || function () {

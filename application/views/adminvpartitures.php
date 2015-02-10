@@ -50,7 +50,7 @@
         <!--END TOPBAR-->
         <div id="wrapper">
             <!--BEGIN SIDEBAR MENU-->
-           <?php include 'menusuaris.php' ?>
+           <?php include 'menu.php' ?>
           
             <div id="page-wrapper">
                 <!--BEGIN TITLE & BREADCRUMB PAGE-->

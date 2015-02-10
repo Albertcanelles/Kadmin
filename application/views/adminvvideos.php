@@ -3,17 +3,19 @@
 <head>
     <title>Data Grid | Data Grid</title>
     <?php include 'scripts.php'; ?>
+            
+        <link rel="stylesheet" href="<?php echo base_url('assets/css/youtube.css');?>"/>
 </head>
 <body>
     <div>
         <!--BEGIN THEME SETTING-->
+
         <!--END THEME SETTING-->
         <!--BEGIN BACK TO TOP-->
         <a id="totop" href="#"><i class="fa fa-angle-up"></i></a>
         <!--END BACK TO TOP-->
         <!--BEGIN TOPBAR-->
         <?php include 'header.php' ?>
-        </nav>
             <!--BEGIN MODAL CONFIG PORTLET-->
             <div id="modal-config" class="modal fade">
                 <div class="modal-dialog">
@@ -50,7 +52,8 @@
         <!--END TOPBAR-->
         <div id="wrapper">
             <!--BEGIN SIDEBAR MENU-->
-           <?php include 'menusuaris.php' ?>
+           <?php include 'menu.php' ?>
+          
           
             <div id="page-wrapper">
                 <!--BEGIN TITLE & BREADCRUMB PAGE-->
@@ -89,20 +92,20 @@
                         <div class="panel">
                             <div class="panel-body">
                                 <div id="grid-layout-table-1" class="box jplist">
-                                    <div class="jplist-ios-button"><i class="fa fa-sort"></i>jPList Actions</div>
+                                    <div class="jplist-ios-button"><i class="fa fa-sort"></i>Accions de la Llista</div>
                                     <div class="jplist-panel box panel-top">
                                         <button type="button" data-control-type="reset" data-control-name="reset" data-control-action="reset" class="jplist-reset-btn btn btn-default">Reset<i class="fa fa-share mls"></i></button>
                                         <div data-control-type="drop-down" data-control-name="paging" data-control-action="paging" class="jplist-drop-down form-control">
                                             <ul class="dropdown-menu">
-                                                <li><span data-number="3"> 3 per page</span></li>
-                                                <li><span data-number="5"> 5 per page</span></li>
-                                                <li><span data-number="10" data-default="true"> 10 per page</span></li>
-                                                <li><span data-number="all"> view all</span></li>
+                                                <li><span data-number="3"> 3 per pàgina</span></li>
+                                                <li><span data-number="5"> 5 per pàgina</span></li>
+                                                <li><span data-number="10" data-default="true"> 10 per pàgina</span></li>
+                                                <li><span data-number="all"> Veure'ls Tots</span></li>
                                             </ul>
                                         </div>
                                         <div data-control-type="drop-down" data-control-name="sort" data-control-action="sort" data-datetime-format="{month}/{day}/{year}" class="jplist-drop-down form-control">
                                             <ul class="dropdown-menu">
-                                                <li><span data-path="default">Sort by</span></li>
+                                                <li><span data-path="default">Ordenar Per</span></li>
                                                 <li><span data-path=".title" data-order="asc" data-type="text">Title A-Z</span></li>
                                                 <li><span data-path=".title" data-order="desc" data-type="text">Title Z-A</span></li>
                                                 <li><span data-path=".desc" data-order="asc" data-type="text">Description A-Z</span></li>
@@ -123,36 +126,43 @@
                                         <div data-control-type="pagination" data-control-name="paging" data-control-action="paging" class="jplist-pagination"></div>
                                     </div>
                                     <div class="box text-shadow">
-                                      <table class="demo-tbl"><!--<item>1</item>-->
-                                           <?php foreach($this->_ci_cached_vars as $index => $llistarpartitura){ ?>
+                                        <table class="demo-tbl"><!--<item>1</item>-->
+                                         <?php foreach($this->_ci_cached_vars as $index => $llistarvideos){ ?>
                                             <tr class="tbl-item"><!--<img/>-->
-                                          
+                                                <td>
+                                                <div class="row">
+                                                <div class="col-lg-4">
+                                            <? $liink = str_replace ( "watch?v=" , "embed/" , $llistarvideos['link']  );  ?>
+                                        <iframe src="<? echo $liink ?>" style="width: 100%; height:100%; border:0"></iframe>
+                                                </div>
+                                                </div>
+                                                </td>
                                                 <!--<data></data>-->
                                                 <td class="td-block">
 
-                                                    <p class="title"><?php echo $llistarpartitura['Nom']; ?></p>
+                                                    <p class="title"><?php echo $llistarvideos['Nomvideo'] ?></p>
 
-                                                    <p class="desc"><?php echo $llistarpartitura['Partitura']; ?></p>
+                                                    <p class="desc"><?php echo $llistarvideos['Descripcio'] ?></p>
 
-                                                    
+                                                   
                                             </tr>
-                                            <?php } ?>
+                                             <?php } ?>
                                         </table>
                                     </div>
-                                    <div class="box jplist-no-results text-shadow align-center"><p>No results found</p></div>
-                                    <div class="jplist-ios-button"><i class="fa fa-sort"></i>jPList Actions</div>
+                                    <div class="box jplist-no-results text-shadow align-center"><p>Hi ha Videos</p></div>
+                                    <div class="jplist-ios-button"><i class="fa fa-sort"></i>Accions de la Llista</div>
                                     <div class="jplist-panel box panel-bottom">
                                         <div data-control-type="drop-down" data-control-name="paging" data-control-action="paging" data-control-animate-to-top="true" class="jplist-drop-down form-control">
                                             <ul class="dropdown-menu">
-                                                <li><span data-number="3"> 3 per page</span></li>
-                                                <li><span data-number="5"> 5 per page</span></li>
-                                                <li><span data-number="10" data-default="true"> 10 per page</span></li>
-                                                <li><span data-number="all"> view all</span></li>
+                                                <li><span data-number="3"> 3 per pàgina</span></li>
+                                                <li><span data-number="5"> 5 per pàgina</span></li>
+                                                <li><span data-number="10" data-default="true"> 10 per pàgina</span></li>
+                                                <li><span data-number="all"> Veure'ls Tots</span></li>
                                             </ul>
                                         </div>
                                         <div data-control-type="drop-down" data-control-name="sort" data-control-action="sort" data-control-animate-to-top="true" data-datetime-format="{month}/{day}/{year}" class="jplist-drop-down form-control">
                                             <ul class="dropdown-menu">
-                                                <li><span data-path="default">Sort by</span></li>
+                                                <li><span data-path="default">Ordenar Per</span></li>
                                                 <li><span data-path=".title" data-order="asc" data-type="text">Title A-Z</span></li>
                                                 <li><span data-path=".title" data-order="desc" data-type="text">Title Z-A</span></li>
                                                 <li><span data-path=".desc" data-order="asc" data-type="text">Description A-Z</span></li>
@@ -186,6 +196,7 @@
             <!--END PAGE WRAPPER-->
         </div>
     </div>
+    
     <script>        (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
             i[r] = i[r] || function () {
@@ -202,5 +213,6 @@
 
 
 </script>
+
 </body>
 </html>

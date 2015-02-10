@@ -13,171 +13,168 @@ class Welcome extends CI_Controller {
 
 	// Totes les vistes carregan les dades des de el model i pasan-lo en variable data
 	public function index()   {
-	/*	if($this->session->userdata('logged_in'))  {
+		if($this->session->userdata('logged_in'))  {
      			$session_data = $this->session->userdata('logged_in');
-     			$data['username'] = $session_data['username'];*/
+     			$data['username'] = $session_data['username'];
 			$this->load->view('welcome_message');
-   	/*	}
+   		}
    		else  {
      			//If no session, redirect to login page
     			 redirect('login', 'refresh');
-   		}*/
+   		}
 	}
 
 	public function concert()  {
 	
-		//if($this->session->userdata('logged_in'))  {
-     	//		$session_data = $this->session->userdata('logged_in');
-     	//		$data['username'] = $session_data['username'];
+		if($this->session->userdata('logged_in'))  {
+     			$session_data = $this->session->userdata('logged_in');
+     			$data['username'] = $session_data['username'];
 			$data = $this->model_concerts->getconcert();
 			$this->load->view('Concerts', $data);
-   	//	}
-   		//else  {
+   		}
+   		else  {
      			//If no session, redirect to login page
-    //			 redirect('login', 'refresh');
-   	//	}
+    			 redirect('login', 'refresh');
+   		}
 		
 	}
 	
 	 public function assajs()  {
-	//if($this->session->userdata('logged_in'))  {
-    // 			$session_data = $this->session->userdata('logged_in');
-    // 			$data['username'] = $session_data['username'];
+	if($this->session->userdata('logged_in'))  {
+     			$session_data = $this->session->userdata('logged_in');
+     			$data['username'] = $session_data['username'];
 			$data = $this->model_concerts->getassajs();
 			$this->load->view('Assajos', $data);
-   	//	}
-   	//	else  {
-     			//If no session, redirect to login page
-    //			 redirect('login', 'refresh');
-   //		}
+   		}
+   		else  {
+    			//If no session, redirect to login page
+    			 redirect('login', 'refresh');
+   		}
 		
 	}
 	
 	 public function video()	{
-		//	if($this->session->userdata('logged_in'))  {
-     	//		$session_data = $this->session->userdata('logged_in');
-     	//		$data['username'] = $session_data['username'];
+			if($this->session->userdata('logged_in'))  {
+     			$session_data = $this->session->userdata('logged_in');
+     			$data['username'] = $session_data['username'];
 			$data = $this->model_concerts->getvideos();
 			$this->load->view('Videos', $data);
-   	//	}
-   	//	else  {
+   		}
+   		else  {
      			//If no session, redirect to login page
-    //			 redirect('login', 'refresh');
-   	//	}
+    			 redirect('login', 'refresh');
+   		}
 	}
 	
 	public function membre() {
 		
- 	/*	if($this->session->userdata('logged_in'))  {
+ 		if($this->session->userdata('logged_in'))  {
      			$session_data = $this->session->userdata('logged_in');
-     			$data['username'] = $session_data['username'];*/
+     			$data['username'] = $session_data['username'];
 			$data = $this->model_concerts->getUser();
 			$this->load->view('Membres', $data);
-   	/*	}
+   		}
    		else  {
      			//If no session, redirect to login page
     			 redirect('login', 'refresh');
-   		}*/
+   		}
 		
 	}
 	
 		public function partitura()   {
-	/*if($this->session->userdata('logged_in'))   {
+	if($this->session->userdata('logged_in'))   {
      		$session_data = $this->session->userdata('logged_in');
-     		$data['username'] = $session_data['username'];*/
+     		$data['username'] = $session_data['username'];
 		$data = $this->model_concerts->getpartitures();
 		$this->load->view('Partitures', $data);
-   /*}
+   }
    else
    {
      //If no session, redirect to login page
      redirect('login', 'refresh');
-   }*/
+   }
 		
 	}
 	
 	public function welcomemembers()  {
-		 /*if($this->session->userdata('logged_in'))
-   {
+		 if($this->session->userdata('logged_in')) {
      $session_data = $this->session->userdata('logged_in');
-     $data['username'] = $session_data['username'];*/
+     $data['username'] = $session_data['username'];
      $this->load->view('welcome_members');
-   //}
-   /*else
+   }
+   else
    {
      //If no session, redirect to login page
      redirect('login', 'refresh');
-   }*/
+   }
 		
 	}
 
 
 	public function vistaassaj()  {
-		 /*if($this->session->userdata('logged_in'))
-   {
+		 if($this->session->userdata('logged_in'))   {
      $session_data = $this->session->userdata('logged_in');
-     $data['username'] = $session_data['username'];*/
+     $data['username'] = $session_data['username'];
      $this->load->model('model_concerts');
 	 $data = $this->model_concerts->getassajs();
 	 $this->load->view('vassaj', $data);
-   /*}
+   }
    else
    {
      //If no session, redirect to login page
      redirect('login', 'refresh');
-   }*/
+   }
 		
 	}
 	
 	public function vistaconcert()  {
-		 /*if($this->session->userdata('logged_in'))
-   {
+		 if($this->session->userdata('logged_in'))  {
      $session_data = $this->session->userdata('logged_in');
-     $data['username'] = $session_data['username'];*/
+     $data['username'] = $session_data['username'];
     $this->load->model('model_concerts');
 		$data = $this->model_concerts->getconcert();
 		$this->load->view('vconcert',$data);
-   //}
-   /*else
+   }
+   else
    {
      //If no session, redirect to login page
-     redirect('login', 'refresh');*/
-   //}
+     redirect('login', 'refresh');
+   }
 		
 	}
 
 	public function vistapartitures()  {
 
-		 /* if($this->session->userdata('logged_in'))
+		  if($this->session->userdata('logged_in'))
    {
      $session_data = $this->session->userdata('logged_in');
-     $data['username'] = $session_data['username'];*/
+     $data['username'] = $session_data['username'];
 		$this->load->model('model_concerts');
 		$data = $this->model_concerts->getpartitures();
 		$this->load->view('vpartitures', $data);
-   /*}
+   }
    else
    {
      //If no session, redirect to login page
      redirect('login', 'refresh');
-   }*/
+   }
 	}
 
 	public function vistavideos()  {
 
-		 /*if($this->session->userdata('logged_in'))
+		 if($this->session->userdata('logged_in'))
    {
      $session_data = $this->session->userdata('logged_in');
-     $data['username'] = $session_data['username'];*/
+     $data['username'] = $session_data['username'];
 		$this->load->model('model_concerts');
 		$data = $this->model_concerts->getvideos();
 		$this->load->view('vvideos', $data);
-   /*}
+   }
    else
    {
      //If no session, redirect to login page
      redirect('login', 'refresh');
-   }*/
+   }
    
 }
    
@@ -485,6 +482,12 @@ class Welcome extends CI_Controller {
 		
 	}
 
+	
+
+	
+
+	*/
+
 	public function vistaassajadmin()
 	{
 		 if($this->session->userdata('logged_in'))
@@ -557,10 +560,6 @@ class Welcome extends CI_Controller {
    }
 		
 	}
-
-	
-
-	*/
 	
 	public function updateMembre($id)
 	{

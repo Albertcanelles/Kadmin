@@ -33,16 +33,16 @@
                     </i><span class="menu-title">Membres</span></a>
                       
                     </li>
-                    <li  <?php if ($_SERVER["REQUEST_URI"] == "/kadmin/index.php/welcome/vistaconcert") { ?>  class="active" <?php } ?> ><a href="<?php echo base_url('index.php/welcome/vistaconcert') ?>"><i class="fa fa-tachometer fa-fw">
+                    <li  <?php if ($_SERVER["REQUEST_URI"] == "/kadmin/index.php/welcome/vistaconcertadmin") { ?>  class="active" <?php } ?> ><a href="<?php echo base_url('index.php/welcome/vistaconcertadmin') ?>"><i class="fa fa-tachometer fa-fw">
                         <div class="icon-bg bg-orange"></div>
                     </i><span class="menu-title">Vista Concerts</span></a></li>
-                    <li  <?php if ($_SERVER["REQUEST_URI"] == "/kadmin/index.php/welcome/vistaassaj") { ?>  class="active" <?php } ?> ><a href="<?php echo base_url('index.php/welcome/vistaassaj') ?>"><i class="fa fa-tachometer fa-fw">
+                    <li  <?php if ($_SERVER["REQUEST_URI"] == "/kadmin/index.php/welcome/vistaassajadmin") { ?>  class="active" <?php } ?> ><a href="<?php echo base_url('index.php/welcome/vistaassajadmin') ?>"><i class="fa fa-tachometer fa-fw">
                         <div class="icon-bg bg-orange"></div>
                     </i><span class="menu-title">Vista Assajos</span></a></li>
-                    <li  <?php if ($_SERVER["REQUEST_URI"] == "/kadmin/index.php/welcome/vistapartitures") { ?>  class="active" <?php } ?> ><a href="<?php echo base_url('index.php/welcome/vistapartitures') ?>"><i class="fa fa-tachometer fa-fw">
+                    <li  <?php if ($_SERVER["REQUEST_URI"] == "/kadmin/index.php/welcome/vistapartituresadmin") { ?>  class="active" <?php } ?> ><a href="<?php echo base_url('index.php/welcome/vistapartituresadmin') ?>"><i class="fa fa-tachometer fa-fw">
                         <div class="icon-bg bg-orange"></div>
                     </i><span class="menu-title">Vista Partitures</span></a></li>
-                    <li  <?php if ($_SERVER["REQUEST_URI"] == "/kadmin/index.php/welcome/vistavideos") { ?>  class="active" <?php } ?> ><a href="<?php echo base_url('index.php/welcome/vistavideos') ?>"><i class="fa fa-tachometer fa-fw">
+                    <li  <?php if ($_SERVER["REQUEST_URI"] == "/kadmin/index.php/welcome/vistavideosadmin") { ?>  class="active" <?php } ?> ><a href="<?php echo base_url('index.php/welcome/vistavideosadmin') ?>"><i class="fa fa-tachometer fa-fw">
                         <div class="icon-bg bg-orange"></div>
                     </i><span class="menu-title">Vista Videos</span></a></li>
                 </ul>

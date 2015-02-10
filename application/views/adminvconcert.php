@@ -7,13 +7,13 @@
 <body>
     <div>
         <!--BEGIN THEME SETTING-->
+        
         <!--END THEME SETTING-->
         <!--BEGIN BACK TO TOP-->
         <a id="totop" href="#"><i class="fa fa-angle-up"></i></a>
         <!--END BACK TO TOP-->
         <!--BEGIN TOPBAR-->
         <?php include 'header.php' ?>
-        </nav>
             <!--BEGIN MODAL CONFIG PORTLET-->
             <div id="modal-config" class="modal fade">
                 <div class="modal-dialog">
@@ -50,7 +50,7 @@
         <!--END TOPBAR-->
         <div id="wrapper">
             <!--BEGIN SIDEBAR MENU-->
-           <?php include 'menusuaris.php' ?>
+          <?php include 'menu.php' ?>
           
             <div id="page-wrapper">
                 <!--BEGIN TITLE & BREADCRUMB PAGE-->
@@ -94,15 +94,15 @@
                                         <button type="button" data-control-type="reset" data-control-name="reset" data-control-action="reset" class="jplist-reset-btn btn btn-default">Reset<i class="fa fa-share mls"></i></button>
                                         <div data-control-type="drop-down" data-control-name="paging" data-control-action="paging" class="jplist-drop-down form-control">
                                             <ul class="dropdown-menu">
-                                                <li><span data-number="3"> 3 per page</span></li>
-                                                <li><span data-number="5"> 5 per page</span></li>
-                                                <li><span data-number="10" data-default="true"> 10 per page</span></li>
-                                                <li><span data-number="all"> view all</span></li>
+                                                <li><span data-number="3"> 3 per pàgina</span></li>
+                                                <li><span data-number="5"> 5 per pàgina</span></li>
+                                                <li><span data-number="10" data-default="true"> 10 per pàgina</span></li>
+                                                <li><span data-number="all"> Veure'ls tots</span></li>
                                             </ul>
                                         </div>
                                         <div data-control-type="drop-down" data-control-name="sort" data-control-action="sort" data-datetime-format="{month}/{day}/{year}" class="jplist-drop-down form-control">
                                             <ul class="dropdown-menu">
-                                                <li><span data-path="default">Sort by</span></li>
+                                                <li><span data-path="default">Ordenar Per</span></li>
                                                 <li><span data-path=".title" data-order="asc" data-type="text">Title A-Z</span></li>
                                                 <li><span data-path=".title" data-order="desc" data-type="text">Title Z-A</span></li>
                                                 <li><span data-path=".desc" data-order="asc" data-type="text">Description A-Z</span></li>
@@ -123,20 +123,23 @@
                                         <div data-control-type="pagination" data-control-name="paging" data-control-action="paging" class="jplist-pagination"></div>
                                     </div>
                                     <div class="box text-shadow">
-                                      <table class="demo-tbl"><!--<item>1</item>-->
-                                           <?php foreach($this->_ci_cached_vars as $index => $llistarpartitura){ ?>
+                                        <table class="demo-tbl"><!--<item>1</item>-->
+                                        <?php foreach($this->_ci_cached_vars as $index => $llistarconcert){ ?>
                                             <tr class="tbl-item"><!--<img/>-->
                                           
                                                 <!--<data></data>-->
-                                                <td class="td-block">
+                                                <td class="td-block"><p class="date"><?php echo $llistarconcert['DiaHora']; ?></p>
 
-                                                    <p class="title"><?php echo $llistarpartitura['Nom']; ?></p>
+                                                    <p class="title"><?php echo $llistarconcert['Concert']; ?></p>
 
-                                                    <p class="desc"><?php echo $llistarpartitura['Partitura']; ?></p>
+                                                    <p class="desc"><?php echo $llistarconcert['Lloc']; ?></p>
 
-                                                    
+                                                    <p class="passa"><?php echo $llistarconcert['Passcalles']; ?></p>
+
+                                                    <p class="like"><?php echo $llistarconcert['Roba']; ?></p></td>
                                             </tr>
                                             <?php } ?>
+                                            <!--<item>2</item>-->
                                         </table>
                                     </div>
                                     <div class="box jplist-no-results text-shadow align-center"><p>No results found</p></div>
@@ -186,6 +189,10 @@
             <!--END PAGE WRAPPER-->
         </div>
     </div>
+   
+
+    <!--CORE JAVASCRIPT-->
+    <script src="script/main.js"></script>
     <script>        (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
             i[r] = i[r] || function () {
