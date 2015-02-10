@@ -116,10 +116,10 @@ class Welcome extends CI_Controller {
 		 /*if($this->session->userdata('logged_in'))
    {
      $session_data = $this->session->userdata('logged_in');
-     $data['username'] = $session_data['username'];
+     $data['username'] = $session_data['username'];*/
      $this->load->model('model_concerts');
-	 $data = $this->model_concerts->getassajs();*/
-	 $this->load->view('vassaj'/*, $data*/);
+	 $data = $this->model_concerts->getassajs();
+	 $this->load->view('vassaj', $data);
    /*}
    else
    {
@@ -133,10 +133,10 @@ class Welcome extends CI_Controller {
 		 /*if($this->session->userdata('logged_in'))
    {
      $session_data = $this->session->userdata('logged_in');
-     $data['username'] = $session_data['username'];
+     $data['username'] = $session_data['username'];*/
     $this->load->model('model_concerts');
-		$data = $this->model_concerts->getconcert();*/
-		$this->load->view('vconcert'/*,$data*/);
+		$data = $this->model_concerts->getconcert();
+		$this->load->view('vconcert',$data);
    //}
    /*else
    {
@@ -151,10 +151,10 @@ class Welcome extends CI_Controller {
 		 /* if($this->session->userdata('logged_in'))
    {
      $session_data = $this->session->userdata('logged_in');
-     $data['username'] = $session_data['username'];
+     $data['username'] = $session_data['username'];*/
 		$this->load->model('model_concerts');
-		$data = $this->model_concerts->getpartitures();*/
-		$this->load->view('vpartitures'/*, $data*/);
+		$data = $this->model_concerts->getpartitures();
+		$this->load->view('vpartitures', $data);
    /*}
    else
    {
@@ -168,10 +168,10 @@ class Welcome extends CI_Controller {
 		 /*if($this->session->userdata('logged_in'))
    {
      $session_data = $this->session->userdata('logged_in');
-     $data['username'] = $session_data['username'];
+     $data['username'] = $session_data['username'];*/
 		$this->load->model('model_concerts');
-		$data = $this->model_concerts->getvideos();*/
-		$this->load->view('vvideos'/*, $data*/);
+		$data = $this->model_concerts->getvideos();
+		$this->load->view('vvideos', $data);
    /*}
    else
    {
