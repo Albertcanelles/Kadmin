@@ -170,9 +170,9 @@
                                          <?php foreach($this->_ci_cached_vars as $index => $llistarvideos){ ?>
                                             <tr class="tbl-item"><!--<img/>-->
                                                 <td>
-                                                 <div class="col-lg-6">
-                                        <iframe src="http://player.vimeo.com/video/22439234" style="width: 100%; height:100%; border:0"></iframe>
-                                    </div>
+                                            <? // NOTA MENTAL PER A FER A CASA ES IMPORTANT SUSTITUIR EL watch?v= PER /embed/ D'AQUESTA MANERA FUNCIONARAN ELS PLUGINS   ?>
+                                        <iframe src="https://www.youtube.com/watch?v=W7PA8PbFvIc" style="width: 100%; height:100%; border:0"></iframe>
+                                   
                                                 </td>
                                                 <!--<data></data>-->
                                                 <td class="td-block"><p class="date">03/15/2012</p>
