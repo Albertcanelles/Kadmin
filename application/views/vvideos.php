@@ -170,14 +170,14 @@
                                          <?php foreach($this->_ci_cached_vars as $index => $llistarvideos){ ?>
                                             <tr class="tbl-item"><!--<img/>-->
                                                 <td>
-                                            <? // NOTA MENTAL PER A FER A CASA ES IMPORTANT SUSTITUIR EL watch?v= PER /embed/ D'AQUESTA MANERA FUNCIONARAN ELS PLUGINS   ?>
-                                        <iframe src="https://www.youtube.com/watch?v=W7PA8PbFvIc" style="width: 100%; height:100%; border:0"></iframe>
+                                            <? $liink = str_replace ( "watch?v=" , "embed/" , $llistarvideos['link']  );  ?>
+                                        <iframe src="<? echo $liink ?>" style="width: 100%; height:100%; border:0"></iframe>
                                    
                                                 </td>
                                                 <!--<data></data>-->
                                                 <td class="td-block"><p class="date">03/15/2012</p>
 
-                                                    <p class="title"><?php echo $llistarvideos['link']; ?></p>
+                                                    <p class="title"><?php echo $liink; ?></p>
 
                                                     <p class="desc">An arch is a structure that spans a space and supports a load. Arches appeared as early as the 2nd millennium BC in Mesopotamian brick architecture and their systematic use started with the Ancient Romans who were the first to apply the technique to a wide range of structures.</p>
 
