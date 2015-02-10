@@ -287,9 +287,9 @@ class Welcome extends CI_Controller {
 				$this->load->view('Videos', $data);
 			}else {
 		$nom = $this->input->post('Nom');
-		$link = $this->input->post('Link');
 		$descripcio = $this->input->post('descripcio');
-		$this->model_concerts->insertVideo($nom, $link, $descripcio);
+		$link = $this->input->post('Link');
+		$this->model_concerts->insertVideo($nom,$descripcio ,$link);
 		// Push The notification with parameters
 		$this->load->library('PushBots');
 		$pb = new PushBots();

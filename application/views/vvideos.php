@@ -132,20 +132,20 @@
                         <div class="panel">
                             <div class="panel-body">
                                 <div id="grid-layout-table-1" class="box jplist">
-                                    <div class="jplist-ios-button"><i class="fa fa-sort"></i>jPList Actions</div>
+                                    <div class="jplist-ios-button"><i class="fa fa-sort"></i>Accions de la Llista</div>
                                     <div class="jplist-panel box panel-top">
                                         <button type="button" data-control-type="reset" data-control-name="reset" data-control-action="reset" class="jplist-reset-btn btn btn-default">Reset<i class="fa fa-share mls"></i></button>
                                         <div data-control-type="drop-down" data-control-name="paging" data-control-action="paging" class="jplist-drop-down form-control">
                                             <ul class="dropdown-menu">
-                                                <li><span data-number="3"> 3 per page</span></li>
-                                                <li><span data-number="5"> 5 per page</span></li>
-                                                <li><span data-number="10" data-default="true"> 10 per page</span></li>
-                                                <li><span data-number="all"> view all</span></li>
+                                                <li><span data-number="3"> 3 per pàgina</span></li>
+                                                <li><span data-number="5"> 5 per pàgina</span></li>
+                                                <li><span data-number="10" data-default="true"> 10 per pàgina</span></li>
+                                                <li><span data-number="all"> Veure'ls Tots</span></li>
                                             </ul>
                                         </div>
                                         <div data-control-type="drop-down" data-control-name="sort" data-control-action="sort" data-datetime-format="{month}/{day}/{year}" class="jplist-drop-down form-control">
                                             <ul class="dropdown-menu">
-                                                <li><span data-path="default">Sort by</span></li>
+                                                <li><span data-path="default">Ordenar Per</span></li>
                                                 <li><span data-path=".title" data-order="asc" data-type="text">Title A-Z</span></li>
                                                 <li><span data-path=".title" data-order="desc" data-type="text">Title Z-A</span></li>
                                                 <li><span data-path=".desc" data-order="asc" data-type="text">Description A-Z</span></li>
@@ -177,29 +177,29 @@
                                                 <!--<data></data>-->
                                                 <td class="td-block"><p class="date">03/15/2012</p>
 
-                                                    <p class="title"><?php echo $liink; ?></p>
+                                                    <p class="title"><?php echo $llistarvideos['Nomvideo'] ?></p>
 
-                                                    <p class="desc">An arch is a structure that spans a space and supports a load. Arches appeared as early as the 2nd millennium BC in Mesopotamian brick architecture and their systematic use started with the Ancient Romans who were the first to apply the technique to a wide range of structures.</p>
+                                                    <p class="desc"><?php echo $llistarvideos['Descripcio'] ?></p>
 
                                                     <p class="like">5 Likes</p></td>
                                             </tr>
                                              <?php } ?>
                                         </table>
                                     </div>
-                                    <div class="box jplist-no-results text-shadow align-center"><p>No results found</p></div>
-                                    <div class="jplist-ios-button"><i class="fa fa-sort"></i>jPList Actions</div>
+                                    <div class="box jplist-no-results text-shadow align-center"><p>Hi ha Videos</p></div>
+                                    <div class="jplist-ios-button"><i class="fa fa-sort"></i>Accions de la Llista</div>
                                     <div class="jplist-panel box panel-bottom">
                                         <div data-control-type="drop-down" data-control-name="paging" data-control-action="paging" data-control-animate-to-top="true" class="jplist-drop-down form-control">
                                             <ul class="dropdown-menu">
-                                                <li><span data-number="3"> 3 per page</span></li>
-                                                <li><span data-number="5"> 5 per page</span></li>
-                                                <li><span data-number="10" data-default="true"> 10 per page</span></li>
-                                                <li><span data-number="all"> view all</span></li>
+                                                <li><span data-number="3"> 3 per pàgina</span></li>
+                                                <li><span data-number="5"> 5 per pàgina</span></li>
+                                                <li><span data-number="10" data-default="true"> 10 per pàgina</span></li>
+                                                <li><span data-number="all"> Veure'ls Tots</span></li>
                                             </ul>
                                         </div>
                                         <div data-control-type="drop-down" data-control-name="sort" data-control-action="sort" data-control-animate-to-top="true" data-datetime-format="{month}/{day}/{year}" class="jplist-drop-down form-control">
                                             <ul class="dropdown-menu">
-                                                <li><span data-path="default">Sort by</span></li>
+                                                <li><span data-path="default">Ordenar Per</span></li>
                                                 <li><span data-path=".title" data-order="asc" data-type="text">Title A-Z</span></li>
                                                 <li><span data-path=".title" data-order="desc" data-type="text">Title Z-A</span></li>
                                                 <li><span data-path=".desc" data-order="asc" data-type="text">Description A-Z</span></li>
