@@ -140,12 +140,15 @@
                                                     <div class="input-icon right">
                                                             <i class="fa fa-globe"></i>
                                                             <input id="inputSubject" type="text" placeholder="Direccio del YouTube" name="Link" class="form-control" /></div>
+                                                    <hr />
+                                                    <div class="form-group mbn">
+                                                        <textarea rows="5" placeholder="Algun detall a destacar del video?" name="descripcio" class="form-control"></textarea></div>
                                                     </div>
                                                 </div>
                                                 </div>
                                                 <div class="form-actions text-right pal">
                                                     <button type="submit" class="btn btn-primary">
-                                                        Add comment</button>
+                                                        Acceptar</button>
                                                 </div>
                                                 </form>
                                             </div>

@@ -279,9 +279,17 @@ class Welcome extends CI_Controller {
 	}
 	
 	public function insertvideos() {
+		$this->form_validation->set_rules('Nom', 'Nom', 'required|xss_clean');
+		$this->form_validation->set_rules('Link', 'Link', 'required|xss_clean');
+		if($this->form_validation->run() == FALSE)
+			{
+				$data = $this->model_concerts->getvideos();
+				$this->load->view('Videos', $data);
+			}else {
 		$nom = $this->input->post('Nom');
 		$link = $this->input->post('Link');
-		$this->model_concerts->insertVideo($nom, $link);
+		$descripcio = $this->input->post('descripcio');
+		$this->model_concerts->insertVideo($nom, $link, $descripcio);
 		// Push The notification with parameters
 		$this->load->library('PushBots');
 		$pb = new PushBots();
@@ -298,7 +306,7 @@ class Welcome extends CI_Controller {
 		// Push it !
 		$pb->Push();
 		redirect('welcome/video');	
-
+		}
 	}
 	
 	public function upload() {

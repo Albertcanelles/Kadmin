@@ -1,33 +1,17 @@
-#ytvideo {
-    float: center;
-	margin-right:10px;
+td.video-containers {
+	position: relative;
+	padding-bottom: 10%;
+	padding-top: 10px;
+	height: 0;
+	overflow: hidden;
 }
 
-ul.video li {
-    width: 260px;
-    height: 180px;
-    padding: 0;
-    float: left;
-    margin: 0 10px 10px 0;
-    overflow: hidden;
-    background: #e5e5e5;
+td.video-containers iframe,  
+td.video-containers object,  
+td.video-containers embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
-
-
-ul.video li a {
-    font-family: georgia;
-    text-decoration: none;
-    display: block;
-    color: blue;
-    border: none;
-}
-
-ul.video li img {
-    border: none;
-    width:100%;
-}
-
-.currentvideo {
-	background: #bbb;
-}
-	

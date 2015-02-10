@@ -28,7 +28,7 @@ class model_concerts extends CI_Model{
     }
 
           function getvideos() {      
-        $this->db->select('id_video, Nomvideo, link');
+        $this->db->select('id_video, Nomvideo, Descripcio, link');
         $query = $this->db->get('Videos');
         return $query->result_array();
     }
@@ -66,9 +66,10 @@ class model_concerts extends CI_Model{
         $this->db->insert('Assajs', $data);
         }
 
-        function insertVideo($nom, $link){
+        function insertVideo($nom, $descripcio,$link){
         $data = array(
         'Nomvideo'=> $nom,
+        'Descripcio' => $descripcio,
         'link'=> $link);
             $this->db->insert('Videos', $data);
         }

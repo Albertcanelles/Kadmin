@@ -3,7 +3,7 @@
 <head>
     <title>Data Grid | Data Grid</title>
     <?php include 'scripts.php'; ?>
-             <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.youtubeplaylist.js');?>"></script>
+            
         <link rel="stylesheet" href="<?php echo base_url('assets/css/youtube.css');?>"/>
 </head>
 <body>
@@ -170,14 +170,14 @@
                                          <?php foreach($this->_ci_cached_vars as $index => $llistarvideos){ ?>
                                             <tr class="tbl-item"><!--<img/>-->
                                                 <td>
-                                                    <ul class="video">
-                                                        <li><a href="<?php echo $llistarvideos['link']; ?>"></a></li>
-                                                    </ul>
+                                                 <div class="col-lg-6">
+                                        <iframe src="http://player.vimeo.com/video/22439234" style="width: 100%; height:100%; border:0"></iframe>
+                                    </div>
                                                 </td>
                                                 <!--<data></data>-->
                                                 <td class="td-block"><p class="date">03/15/2012</p>
 
-                                                    <p class="title">Arch</p>
+                                                    <p class="title"><?php echo $llistarvideos['link']; ?></p>
 
                                                     <p class="desc">An arch is a structure that spans a space and supports a load. Arches appeared as early as the 2nd millennium BC in Mesopotamian brick architecture and their systematic use started with the Ancient Romans who were the first to apply the technique to a wide range of structures.</p>
 
@@ -253,19 +253,6 @@
 
 
 </script>
-  <script type="text/ecmascript">
-    
-        $(function() {
-            $("ul.video").ytplaylist({
-                addThumbs:true, 
-                autoPlay: false, 
-                playerWidth: '260',
-                playerHeight: '180',
-                thumbSize: 'large',
-                showInline: true
-                });
-        });
-    
-</script>
+
 </body>
 </html>
