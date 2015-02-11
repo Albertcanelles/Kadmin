@@ -271,13 +271,15 @@ class Welcome extends CI_Controller {
 	// Falta remodelar la taula d'usuaris
 	public function insertusuaris() {
 		$this->form_validation->set_rules('Usuari', 'Usuari', 'required|xss_clean');
-		$this->form_validation->set_rules('Contrasenya', 'Contrasenya', 'required');
-		$this->form_validation->set_rules('confirmala', 'Contrasenya', 'required|matches[Contrasenya]');
+		$this->form_validation->set_rules('Contrasenya', 'Contrasenya', 'required|matches[comfirmala]');
+		$this->form_validation->set_rules('comfirmala', 'Comfirmar Contraseña', 'required');
 		$this->form_validation->set_rules('Nom', 'Nom', 'required|xss_clean');
 		$this->form_validation->set_rules('Cognom', 'Cognom', 'required|xss_clean');
 		$this->form_validation->set_message('required', '<div class="alert alert-danger alert-dismissable">
                                             <button type="button" data-dismiss="alert" aria-hidden="true" class="close">&times;</button>
                                             <strong>Error!<span class="glyphicons glyphicons-skull"></span></strong> El camp %s es obligat</div>');
+		$contrasenya = $this->input->post('Contrasenya');
+		$contra1 = $this->input->post('confirmala');
 		if($this->form_validation->run() == FALSE)
 			{
 				$data = $this->model_concerts->getUser();
@@ -285,6 +287,7 @@ class Welcome extends CI_Controller {
 			}else{
 				$usuari = $this->input->post('Usuari');
 				$contrasenya = $this->input->post('Contrasenya');
+				$contra1 = $this->input->post('confirmala');
 				$nom = $this->input->post('Nom');
 				$cognom = $this->input->post('Cognom');
 				$rol = $this->input->post('optionUsers');

@@ -40,7 +40,7 @@ class model_concerts extends CI_Model{
     }
 
         function getUser() {
-            $this->db->select('id_membre,usuari,rol');
+            $this->db->select('id_membre,usuari,nom,cognom,rol');
             $query = $this->db->get('Membres');
             return $query->result_array();
         }

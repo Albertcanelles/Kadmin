@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Extras | Extras</title>
+    <title>Banda de Música de Jesús | Perfil</title>
 
     <!--Loading bootstrap css-->
     <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700">
@@ -40,7 +40,7 @@
                 <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
                     <div class="page-header pull-left">
                         <div class="page-title">
-                            Extras</div>
+                            Perfil</div>
                     </div>
                     <ol class="breadcrumb page-breadcrumb pull-right">
                         <li><i class="fa fa-home"></i>&nbsp;<a href="dashboard.html">Home</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
@@ -89,7 +89,9 @@
                                     </tr>
                                     <tr>
                                         <td>Nom</td>
-                                        <td>name@example.com</td>
+                                        <td><?$sesio = $this->session->userdata('logged_in');
+                    $noom = $sesio['nom'];
+                    echo $noom; ?></td>
                                     </tr>
                                     <tr>
                                         <td>Cognom</td>

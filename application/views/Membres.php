@@ -26,7 +26,7 @@
                 <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
                     <div class="page-header pull-left">
                         <div class="page-title">
-                            Forms</div>
+                            Gestió de Membres</div>
                     </div>
                     <ol class="breadcrumb page-breadcrumb pull-right">
                         <li><i class="fa fa-home"></i>&nbsp;<a href="dashboard.html">Inici</a>&nbsp;&nbsp;<i
@@ -67,12 +67,12 @@
                                                     <div class="form-group">
                                                         <div class="input-icon right">
                                                             <i class="fa fa-lock"></i>
-                                                            <input id="inputPassword" type="password"  name="Contrasenya "placeholder="Contrasenya" class="form-control" /></div>
+                                                            <input id="inputPassword" type="password"  name="Contrasenya" placeholder="Contrasenya" class="form-control" /></div>
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="input-icon right">
                                                             <i class="fa fa-lock"></i>
-                                                            <input id="inputConfirmPassword" type="password" name="confirmala" placeholder="Confirma la Contrasenya" class="form-control" /></div>
+                                                            <input id="inputConfirmPassword" type="password" name="comfirmala" placeholder="Confirma la Contrasenya" class="form-control" /></div>
                                                     </div>
                                                     <hr />
                                                     <div class="row">
