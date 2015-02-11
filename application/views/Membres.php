@@ -40,6 +40,7 @@
                 <!--END TITLE & BREADCRUMB PAGE-->
                 <!--BEGIN CONTENT-->
                 <div class="page-content">
+                <?php echo validation_errors(); ?>
                     <div id="tab-general">
                         <div class="row mbl">
                             <div class="col-lg-12">
@@ -55,7 +56,7 @@
                                             <div class="panel-heading">
                                                 Registration form</div>
                                             <div class="panel-body pan">
-                                            <?php echo validation_errors(); ?>
+                                            
                                                 <form action="insertusuaris" method="POST">
                                                 <div class="form-body pal">
                                                     <div class="form-group">
@@ -71,7 +72,7 @@
                                                     <div class="form-group">
                                                         <div class="input-icon right">
                                                             <i class="fa fa-lock"></i>
-                                                            <input id="inputConfirmPassword" type="password" name="comfirmala" placeholder="Confirma la Contrasenya" class="form-control" /></div>
+                                                            <input id="inputConfirmPassword" type="password" name="confirmala" placeholder="Confirma la Contrasenya" class="form-control" /></div>
                                                     </div>
                                                     <hr />
                                                     <div class="row">
@@ -82,6 +83,18 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <input id="inputLastName" type="text" placeholder="Cognom" name="Cognom" class="form-control" /></div>
+                                                        </div>
+                                                        <div class="radio">
+                                                          <label>
+                                                            <input type="radio" name="optionUsers" id="optionsRadios1" value="Membre" checked="">
+                                                            Membre
+                                                          </label>
+                                                        </div>
+                                                        <div class="radio">
+                                                          <label>
+                                                            <input type="radio" name="optionUsers" id="optionsRadios2" value="Administrador">
+                                                            Administrador
+                                                          </label>
                                                         </div>
                                                     </div>
                                                 <div class="form-actions text-right pal">

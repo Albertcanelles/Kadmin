@@ -37,6 +37,16 @@ Class User extends CI_Model
 			return $query->row()->rol;
 	
 	 }
+	 
+	 public function verifica_username($user) {
+        $this->db->where('usuari',$user);
+        $consulta = $this->db->get('Membres');
+        if($consulta->num_rows() == 1)
+        {
+            $row = $consulta->row();
+            return $row->usuari;
+        }
+    }
  
 }
 ?>

@@ -13,8 +13,11 @@ class VerifyLogin extends CI_Controller {
    //This method will have the credentials validation
    $this->load->library('form_validation');
 
-   $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean');
-   $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|callback_check_database');
+   $this->form_validation->set_rules('username', 'Usuari', 'trim|required|xss_clean');
+   $this->form_validation->set_rules('password', 'Contrasenya', 'trim|required|xss_clean|callback_check_database');
+   $this->form_validation->set_message('required', '<div class="alert alert-danger alert-dismissable">
+                                            <button type="button" data-dismiss="alert" aria-hidden="true" class="close">&times;</button>
+                                            <strong>Error!</strong> El camp %s es obligat</div>');
 
    if($this->form_validation->run() == FALSE)
    {
@@ -36,7 +39,7 @@ class VerifyLogin extends CI_Controller {
             default:        
                redirect('login_view');
                 break;      
-			
+      
         }
     // redirect(base_url().'index.php/welcome/welcomemembers');
    }
@@ -47,6 +50,19 @@ class VerifyLogin extends CI_Controller {
  {
    //Field validation succeeded.  Validate against database
    $username = $this->input->post('username');
+   $comprobar_username = $this->user->verifica_username($username);
+    if ($comprobar_username != $username) {
+            $this->form_validation->set_message('check_database', '<div class="alert alert-danger alert-dismissable">
+                                            <button type="button" data-dismiss="alert" aria-hidden="true" class="close">&times;</button>
+                                            <strong>Error!</strong> Usuari incorrecte</div>');
+            return FALSE;
+        }
+   else if ($username==NULL){
+    $this->form_validation->set_message('check_database', '<div class="alert alert-danger alert-dismissable">
+                                            <button type="button" data-dismiss="alert" aria-hidden="true" class="close">&times;</button>
+                                            <strong>Error!</strong> Contrasenya Incorrecta</div>');
+   }
+   else {
    //query the database
    $role = $this->user->getRole($username);
    $result = $this->user->login($username, $password, $role);
@@ -79,11 +95,12 @@ class VerifyLogin extends CI_Controller {
    }
    else
    {
-     $this->form_validation->set_message('check_database', 'Has introduit malament el teu compte o contrasenya');
-     redirect(base_url().'index.php/login');
-    // return false;
-     
+     $this->form_validation->set_message('check_database', '<div class="alert alert-danger alert-dismissable">
+                                            <button type="button" data-dismiss="alert" aria-hidden="true" class="close">&times;</button>
+                                            <strong>Error!</strong> Has introduït malament el teu Usuari ho Contrasenya</div>');
+     return false;
    }
  }
+}
 }
 ?>

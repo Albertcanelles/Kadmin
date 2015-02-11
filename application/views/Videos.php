@@ -39,6 +39,7 @@
                 <!--END TITLE & BREADCRUMB PAGE-->
                 <!--BEGIN CONTENT-->
                 <div class="page-content">
+                <?php echo validation_errors(); ?>
                     <div id="tab-general">
                         <div class="row mbl">
                             <div class="col-lg-12">
@@ -54,7 +55,7 @@
                                             <div class="panel-heading">
                                                 Videos</div>
                                             <div class="panel-body pan">
-                                            <?php echo validation_errors(); ?>
+                                            
                                                 <form action="insertvideos" method="POST">
                                                 <div class="form-body pal">
                                                     <div class="row">

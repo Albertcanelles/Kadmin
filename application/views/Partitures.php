@@ -60,8 +60,7 @@
                                                     <div class="form-group">
                                                         <input id="inputIncludeFile" type="file" name="cipote" placeholder="Inlcude some file" /></div>
                                                         <hr />
-                                                    <div class="form-group mbn">
-                                                        <textarea rows="5" placeholder="Tell us about your project" class="form-control"></textarea></div>
+                                                   
                                                 </div>
                                                 <div class="form-actions text-right pal">
                                                     <button type="submit" class="btn btn-primary">

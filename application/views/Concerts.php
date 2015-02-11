@@ -42,6 +42,7 @@
                 <!--END TITLE & BREADCRUMB PAGE-->
                 <!--BEGIN CONTENT-->
                 <div class="page-content">
+                <?php echo validation_errors(); ?>
                     <div id="tab-general">
                         <div class="row mbl">
                             <div class="col-lg-12">
@@ -57,21 +58,21 @@
                                                 Concerts</div>
                                             <div class="panel-body pan">
 												
-                                                <?php echo validation_errors(); ?>
+                                                
                                                 <form action="insertarconcert" method="POST">
                                                 <div class="form-body pal">
                                                     <div class="row">
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <div class="input-icon">
-                                                                    <i class="fa fa-user"></i>
+                                                                    <i class="fa fa-bell fa-fw"></i>
                                                                     <input id="inputFirstName" type="text" placeholder="Concert" name="Concert" class="form-control" /></div>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <div class="input-icon">
-                                                                    <i class="fa fa-user"></i>
+                                                                    <i class="fa fa-calendar"></i>
                                                                     <input  type="text" placeholder="Dia i Hora" id="datetimepicker" name="Diahora" class="form-control" /></div>
                                                             </div>
                                                             
@@ -82,7 +83,7 @@
                                                         <div class="col-md-6">
                                                             <div class="form-group">
                                                                 <div class="input-icon">
-                                                                    <i class="fa fa-envelope"></i>
+                                                                    <i class="fa fa-globe"></i>
                                                                     <input id="inputEmail" type="text" placeholder="Lloc" name="Lloc" class="form-control" /></div>
                                                             </div>
                                                         </div>

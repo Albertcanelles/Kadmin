@@ -96,6 +96,19 @@ class Welcome extends CI_Controller {
 		
 	}
 	
+		public function perfil()	{
+				if($this->session->userdata('logged_in'))  {
+	     			$session_data = $this->session->userdata('logged_in');
+	     			$data['username'] = $session_data['username'];
+				$data = $this->model_concerts->getUser();
+				$this->load->view('perfil', $data);
+	   		}
+	   		else  {
+	     			//If no session, redirect to login page
+	    			 redirect('login', 'refresh');
+	   		}
+		}
+
 	public function welcomemembers()  {
 		 if($this->session->userdata('logged_in')) {
      $session_data = $this->session->userdata('logged_in');
@@ -189,7 +202,6 @@ class Welcome extends CI_Controller {
 	
 		if($this->form_validation->run() == FALSE)
 			{
-
 				$data = $this->model_concerts->getconcert();
 				$this->load->view('Concerts', $data);
 			}else{
@@ -258,15 +270,14 @@ class Welcome extends CI_Controller {
 	
 	// Falta remodelar la taula d'usuaris
 	public function insertusuaris() {
-		$this->form_validation->set_rules('Assajs', 'Assajs', 'required|xss_clean');
 		$this->form_validation->set_rules('Usuari', 'Usuari', 'required|xss_clean');
-		$this->form_validation->set_rules('Contrasenya', 'Contraseña', 'required|matches[comfirmala]');
-		$this->form_validation->set_rules('comfirmala', 'Comfirmar Contraseña', 'required');
-		$this->form_validation->set_rules('Nom', 'proxact', 'required|xss_clean');
-		$this->form_validation->set_rules('Cognom', 'Diahora', 'required|xss_clean');
+		$this->form_validation->set_rules('Contrasenya', 'Contrasenya', 'required');
+		$this->form_validation->set_rules('confirmala', 'Contrasenya', 'required|matches[Contrasenya]');
+		$this->form_validation->set_rules('Nom', 'Nom', 'required|xss_clean');
+		$this->form_validation->set_rules('Cognom', 'Cognom', 'required|xss_clean');
 		$this->form_validation->set_message('required', '<div class="alert alert-danger alert-dismissable">
                                             <button type="button" data-dismiss="alert" aria-hidden="true" class="close">&times;</button>
-                                            <strong>Error!</strong> El camp %s es obligat</div>');
+                                            <strong>Error!<span class="glyphicons glyphicons-skull"></span></strong> El camp %s es obligat</div>');
 		if($this->form_validation->run() == FALSE)
 			{
 				$data = $this->model_concerts->getUser();
@@ -287,7 +298,7 @@ class Welcome extends CI_Controller {
 		$this->form_validation->set_rules('Link', 'Link', 'required|xss_clean');
 		$this->form_validation->set_message('required', '<div class="alert alert-danger alert-dismissable">
                                             <button type="button" data-dismiss="alert" aria-hidden="true" class="close">&times;</button>
-                                            <strong>Error!</strong> El camp %s es obligat</div>');
+                                            <strong>Error!<span class="glyphicons glyphicons-skull"></span></strong> El camp %s es obligat</div>');
 		if($this->form_validation->run() == FALSE)
 			{
 				$data = $this->model_concerts->getvideos();

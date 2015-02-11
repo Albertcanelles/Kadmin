@@ -3,7 +3,8 @@
 <meta charset="utf-8">
  <head>
    <title>Pàgina de registre</title>
-        <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap3.min.css');?>">
+   <?php  include 'scripts.php' ?>
+        <link rel="stylesheet" href="<?php echo base_url('assets/css/bootstrap3Login.min.css');?>">
  </head>
  <body>
 <!--

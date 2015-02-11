@@ -19,7 +19,7 @@
     <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/css/pace.css');?>">
     <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/css/jquery.news-ticker.css');?>">
     <link type="text/css" rel="stylesheet" href="<?php echo base_url('assets/css/jplist-custom.css');?>">
-
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
     
     <script src="<?php echo base_url('assets/js/jquery-1.10.2.min.js');?>"></script>
     <script src="<?php echo base_url('assets/js/jquery-migrate-1.2.1.min.js');?>"></script>

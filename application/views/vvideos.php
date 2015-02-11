@@ -15,7 +15,47 @@
         <a id="totop" href="#"><i class="fa fa-angle-up"></i></a>
         <!--END BACK TO TOP-->
         <!--BEGIN TOPBAR-->
-        <?php include 'header.php' ?>
+        <div id="header-topbar-option-demo" class="page-header-topbar">
+            <nav id="topbar" role="navigation" style="margin-bottom: 0;" data-step="3" class="navbar navbar-default navbar-static-top">
+            <div class="navbar-header">
+                <button type="button" data-toggle="collapse" data-target=".sidebar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                <a id="logo" href="index.html" class="navbar-brand"><span class="fa fa-rocket"></span><span class="logo-text">KAdmin</span><span style="display: none" class="logo-text-icon">µ</span></a></div>
+            <div class="topbar-main"><a id="menu-toggle" href="#" class="hidden-xs"><i class="fa fa-bars"></i></a>
+                
+                <form id="topbar-search" action="" method="" class="hidden-sm hidden-xs">
+                    <div class="input-icon right text-white"><a href="#"><i class="fa fa-search"></i></a><input type="text" placeholder="Search here..." class="form-control text-white"/></div>
+                </form>
+                <div class="news-update-box hidden-xs"><span class="text-uppercase mrm pull-left text-white">News:</span>
+                    <ul id="news-update" class="ticker list-unstyled">
+                        <li>Welcome to KAdmin - Responsive Multi-Style Admin Template</li>
+                        <li>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque.</li>
+                    </ul>
+                </div>
+                <ul class="nav navbar navbar-top-links navbar-right mbn">
+                    <li class="dropdown"><a data-hover="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-bell fa-fw"></i><span class="badge badge-green">3</span></a>
+                        
+                    </li>
+                    <li class="dropdown"><a data-hover="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-envelope fa-fw"></i><span class="badge badge-orange">7</span></a>
+                        
+                    </li>
+                    <li class="dropdown"><a data-hover="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-tasks fa-fw"></i><span class="badge badge-yellow">8</span></a>
+                        
+                    </li>
+                    <li class="dropdown topbar-user"><a data-hover="dropdown" href="#" class="dropdown-toggle"><img src="images/avatar/48.jpg" alt="" class="img-responsive img-circle"/>&nbsp;<span class="hidden-xs">Robert John</span>&nbsp;<span class="caret"></span></a>
+                        <ul class="dropdown-menu dropdown-user pull-right">
+                            <li><a href="#"><i class="fa fa-user"></i>My Profile</a></li>
+                            <li><a href="#"><i class="fa fa-calendar"></i>My Calendar</a></li>
+                            <li><a href="#"><i class="fa fa-envelope"></i>My Inbox<span class="badge badge-danger">3</span></a></li>
+                            <li><a href="#"><i class="fa fa-tasks"></i>My Tasks<span class="badge badge-success">7</span></a></li>
+                            <li class="divider"></li>
+                            <li><a href="#"><i class="fa fa-lock"></i>Lock Screen</a></li>
+                            <li><a href="Login.html"><i class="fa fa-key"></i>Log Out</a></li>
+                        </ul>
+                    </li>
+                    <li id="topbar-chat" class="hidden-xs"><a href="javascript:void(0)" data-step="4" data-intro="&lt;b&gt;Form chat&lt;/b&gt; keep you connecting with other coworker" data-position="left" class="btn-chat"><i class="fa fa-comments"></i><span class="badge badge-info">3</span></a></li>
+                </ul>
+            </div>
+        </nav>
             <!--BEGIN MODAL CONFIG PORTLET-->
             <div id="modal-config" class="modal fade">
                 <div class="modal-dialog">
@@ -52,7 +92,7 @@
         <!--END TOPBAR-->
         <div id="wrapper">
             <!--BEGIN SIDEBAR MENU-->
-           <?php include 'menusuaris.php' ?>
+           <?php include 'menu.php' ?>
           
           
             <div id="page-wrapper">
@@ -92,7 +132,7 @@
                         <div class="panel">
                             <div class="panel-body">
                                 <div id="grid-layout-table-1" class="box jplist">
-                                    <div class="jplist-ios-button"><i class="fa fa-sort"></i>Accions de la Llista</div>
+                                    <div class="jplist-ios-button"><i class="fa fa-sort"></i>Accions de la llistarvideos</div>
                                     <div class="jplist-panel box panel-top">
                                         <button type="button" data-control-type="reset" data-control-name="reset" data-control-action="reset" class="jplist-reset-btn btn btn-default">Reset<i class="fa fa-share mls"></i></button>
                                         <div data-control-type="drop-down" data-control-name="paging" data-control-action="paging" class="jplist-drop-down form-control">
@@ -130,21 +170,18 @@
                                          <?php foreach($this->_ci_cached_vars as $index => $llistarvideos){ ?>
                                             <tr class="tbl-item"><!--<img/>-->
                                                 <td>
-                                                <div class="row">
-                                                <div class="col-lg-4">
                                             <? $liink = str_replace ( "watch?v=" , "embed/" , $llistarvideos['link']  );  ?>
-                                        <iframe src="<? echo $liink ?>" style="width: 100%; height:100%; border:0"></iframe>
-                                                </div>
-                                                </div>
+                                        <iframe src="<? echo $liink ?>" style="width: 100%; height:100%; "></iframe>
+                                   
                                                 </td>
                                                 <!--<data></data>-->
-                                                <td class="td-block">
+                                                <td class="td-block"><p class="date">03/15/2012</p>
 
                                                     <p class="title"><?php echo $llistarvideos['Nomvideo'] ?></p>
 
                                                     <p class="desc"><?php echo $llistarvideos['Descripcio'] ?></p>
 
-                                                   
+                                                    <p class="like">5 Likes</p></td>
                                             </tr>
                                              <?php } ?>
                                         </table>
@@ -190,7 +227,10 @@
                 </div>
                 <!--END CONTENT-->
                 <!--BEGIN FOOTER-->
-                <?php include 'footer.php' ?>
+                <div id="footer">
+                    <div class="copyright">
+                        <a href="http://themifycloud.com">2014 © KAdmin Responsive Multi-Purpose Template</a></div>
+                </div>
                 <!--END FOOTER-->
             </div>
             <!--END PAGE WRAPPER-->
