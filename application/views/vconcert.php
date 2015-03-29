@@ -13,7 +13,7 @@
         <a id="totop" href="#"><i class="fa fa-angle-up"></i></a>
         <!--END BACK TO TOP-->
         <!--BEGIN TOPBAR-->
-        <?php include 'header.php' ?>
+        <?php include 'headerusers.php' ?>
             <!--BEGIN MODAL CONFIG PORTLET-->
             <div id="modal-config" class="modal fade">
                 <div class="modal-dialog">

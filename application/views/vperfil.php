@@ -17,7 +17,7 @@
         <a id="totop" href="#"><i class="fa fa-angle-up"></i></a>
         <!--END BACK TO TOP-->
         <!--BEGIN TOPBAR-->
-        <?php include 'header.php' ?>
+        <?php include 'headerusers.php' ?>
             <!--BEGIN MODAL CONFIG PORTLET-->
 			<div class="common-modal modal fade" id="common-Modal1" tabindex="-1" role="dialog" aria-hidden="true">
 				<div class="modal-content">
@@ -32,7 +32,7 @@
         <!--END TOPBAR-->
         <div id="wrapper">
             <!--BEGIN SIDEBAR MENU-->
-            <?php include 'menu.php' ?>
+            <?php include 'menusuaris.php' ?>
           
           
             <div id="page-wrapper">
@@ -111,7 +111,7 @@
 
                                                 <div class="col-sm-9 controls">
                                                     <div class="row">
-                                                        <div class="col-xs-4"><input type="password" name="Contrasenya" placeholder="Contrasenya" class="form-control"/></div>
+                                                        <div class="col-xs-4"><input type="password" placeholder="Contrasenya" class="form-control"/></div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -119,7 +119,7 @@
 
                                                 <div class="col-sm-9 controls">
                                                     <div class="row">
-                                                        <div class="col-xs-4"><input type="password" name="comfirmala" placeholder="Confirma-la" class="form-control"/></div>
+                                                        <div class="col-xs-4"><input type="password" placeholder="Confirma-la" class="form-control"/></div>
                                                     </div>
                                                 </div>
                                             </div>

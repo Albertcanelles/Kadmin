@@ -82,7 +82,11 @@
                                                     <button type="submit" class="btn btn-primary">
                                                         Acceptar</button>
                                                 </div>
-                                                </form>
+                                                <?php echo form_close();?>
+                                                 <?php if($this->session->flashdata('success_upload'));?>
+                                                    <div> 
+                                                    <?php echo $this->session->flashdata('success_upload');?>
+                                                    </div>
                                             </div>
                                         </div>
                                     </div>

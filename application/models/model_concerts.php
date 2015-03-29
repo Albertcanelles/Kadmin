@@ -32,6 +32,11 @@ class model_concerts extends CI_Model{
         $query = $this->db->get('Videos');
         return $query->result_array();
     }
+		 function getvista() {      
+        $this->db->select('id_vista, titul, data, info,pdfimg');
+        $query = $this->db->get('Vista');
+        return $query->result_array();
+    }
 
         function getassajs() {      
         $this->db->select('id_assajs,Assajs,DiaHora,Lloc,ProxActuacio');
@@ -46,8 +51,17 @@ class model_concerts extends CI_Model{
         }
 
         // Tots els inserts que inserten dades
-
-         function insertConcert($concerts, $lloc, $roba, $fecha, $passacalles){
+        function insertConcert($titul, $noticia, $nom, $file_name){
+        $data = array(
+        'titul'=> $titul,
+        'info'=> $noticia,
+        'pdfimg'=> $file_name,
+        'imgnom'=> $nom
+        );
+            $this->db->insert('Concert', $data);
+        }
+        
+         function insertVista($concerts, $lloc, $roba, $fecha, $passacalles){
         $data = array(
         'Concert'=> $concerts,
         'DiaHora'=> $fecha,

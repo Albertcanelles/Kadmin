@@ -14,7 +14,7 @@
                     echo $noom; ?>
                     </span>&nbsp;<span class="caret"></span></a>
                         <ul class="dropdown-menu dropdown-user pull-right">
-                            <li><a href="<?php echo base_url('index.php/welcome/perfil');?>"><i class="fa fa-user"></i>Perfil</a></li>
+                            <li><a href="<?php echo base_url('index.php/welcome/vistaperfil');?>"><i class="fa fa-user"></i>Perfil</a></li>
                             <li class="divider"></li>
                             <li><a href="<?php echo base_url('index.php/home/logout');?>"><i class="fa fa-key"></i>Sortir</a></li>
                         </ul>

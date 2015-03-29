@@ -99,9 +99,10 @@ class Welcome extends CI_Controller {
 		public function perfil()	{
 				if($this->session->userdata('logged_in'))  {
 	     			$session_data = $this->session->userdata('logged_in');
-	     			$data['username'] = $session_data['username'];
-				$data = $this->model_concerts->getUser();
-				$this->load->view('perfil', $data);
+	     			
+				
+				//$conjunt = array('Nom'=>$session_data['username'])
+				$this->load->view('perfil', $session_data);
 	   		}
 	   		else  {
 	     			//If no session, redirect to login page
@@ -155,6 +156,19 @@ class Welcome extends CI_Controller {
    }
 		
 	}
+	public function vistaperfil()	{
+				if($this->session->userdata('logged_in'))  {
+	     			$session_data = $this->session->userdata('logged_in');
+	     			
+				
+				//$conjunt = array('Nom'=>$session_data['username'])
+				$this->load->view('vperfil', $session_data);
+	   		}
+	   		else  {
+	     			//If no session, redirect to login page
+	    			 redirect('login', 'refresh');
+	   		}
+		}
 
 	public function vistapartitures()  {
 
@@ -268,6 +282,11 @@ class Welcome extends CI_Controller {
 	}
 	}
 	
+	public function vistavista() {
+		$this->load->model('model_concerts');
+		$data = $this->model_concerts->getconcert();
+		$this->load->view('vvista',$data);
+	}
 	// Falta remodelar la taula d'usuaris
 	public function insertusuaris() {
 		$this->form_validation->set_rules('Usuari', 'Usuari', 'required|xss_clean');
@@ -377,7 +396,7 @@ class Welcome extends CI_Controller {
 			redirect('welcome/partitura');
 			}
 	}
-	
+
 	public function eliminarConcerts($id)
 	{
 
@@ -414,104 +433,7 @@ class Welcome extends CI_Controller {
 		redirect('welcome/membre');
 	}
 	
-	/*
 	
-
-	public function welcomemembers()
-	{
-		 if($this->session->userdata('logged_in'))
-   {
-     $session_data = $this->session->userdata('logged_in');
-     $data['username'] = $session_data['username'];
-     $this->load->view('welcome_members');
-   }
-   else
-   {
-     //If no session, redirect to login page
-     redirect('login', 'refresh');
-   }
-		
-	}
-
-
-	public function vistaassaj()
-	{
-		 if($this->session->userdata('logged_in'))
-   {
-     $session_data = $this->session->userdata('logged_in');
-     $data['username'] = $session_data['username'];
-     $this->load->model('model_concerts');
-	 $data = $this->model_concerts->getassajs();
-	 $this->load->view('vassaj', $data);
-   }
-   else
-   {
-     //If no session, redirect to login page
-     redirect('login', 'refresh');
-   }
-		
-	}
-	
-	public function vistaconcert()
-	{
-		 if($this->session->userdata('logged_in'))
-   {
-     $session_data = $this->session->userdata('logged_in');
-     $data['username'] = $session_data['username'];
-    $this->load->model('model_concerts');
-		$data = $this->model_concerts->getconcert();
-		$this->load->view('vconcert',$data);
-   }
-   else
-   {
-     //If no session, redirect to login page
-     redirect('login', 'refresh');
-   }
-		
-	}
-
-	public function vistapartitures()
-	{
-
-		 if($this->session->userdata('logged_in'))
-   {
-     $session_data = $this->session->userdata('logged_in');
-     $data['username'] = $session_data['username'];
-		$this->load->model('model_concerts');
-		$data = $this->model_concerts->getpartitures();
-		$this->load->view('vpartitures', $data);
-   }
-   else
-   {
-     //If no session, redirect to login page
-     redirect('login', 'refresh');
-   }
-	}
-
-	public function vistavideos()
-	{
-
-		 if($this->session->userdata('logged_in'))
-   {
-     $session_data = $this->session->userdata('logged_in');
-     $data['username'] = $session_data['username'];
-		$this->load->model('model_concerts');
-		$data = $this->model_concerts->getvideos();
-		$this->load->view('vvideos', $data);
-   }
-   else
-   {
-     //If no session, redirect to login page
-     redirect('login', 'refresh');
-   }
-		
-	}
-
-	
-
-	
-
-	*/
 
 	public function vistaassajadmin()
 	{
